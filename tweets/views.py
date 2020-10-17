@@ -3,19 +3,25 @@ from django.shortcuts import render
 
 from .models import Tweet
 # Create your views here.
-def home_view(reques, *args,**kwargs):
-    print(args,kwargs)
-    return HttpResponse("<h1> Hello World<h1>")
+def home_view(request, *args,**kwargs):
+    return render(request, "pages/home.html", context={}, status=200)
 
-def tweet_detail_view(reques,tweet_id,*args,**kwargs):
+def tweet_list_view(request,tweet_id,*args,**kwargs):
+    qs = Tweet.objects.all()
+    tweets_list = [{"id": x.id, "content": x.content} for x in qs]
+    data = {
+        "response":tweets_list
+    }
+    return JsonResponse(data)
+
+def tweet_detail_view(request,tweet_id,*args,**kwargs):
     """"
     Rest Api view
     consume bu js
     return json data
     """
     data={
-        "id":tweet_id,
-        "content": obj.content,
+        "id":tweet_id
         #"image_path": obj.image.url
     }
     status=200
