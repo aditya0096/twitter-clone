@@ -13,14 +13,17 @@ def tweet_detail_view(reques,tweet_id,*args,**kwargs):
     consume bu js
     return json data
     """
-    try:
-        obj = Tweet.objects.get(id=tweet_id)
-    except:
-        raise Http404
     data={
-        "id": tweet_id,
+        "id":tweet_id,
         "content": obj.content,
         #"image_path": obj.image.url
     }
-    return JsonResponse(data)
+    status=200
+    try:
+        obj=Tweet.objects.get(id=tweet_id)
+        data['content']= obj.content
+    except:
+        data['message']= "Not Found"
+        status=404
+    return JsonResponse(data,status=status)
     #return HttpResponse(f"<h1> Hello {tweet_id}-{obj.content}<h1>")
