@@ -1,9 +1,10 @@
 1. Tweets
     -> creating
-     ->text
-     ->image
+        ->text
+        ->image ->media storage
     ->delete
     ->retweeting
+    ->liking
 
 2. users
 
