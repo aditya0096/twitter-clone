@@ -50,25 +50,24 @@ Twitter
           myForm.reset()
         } else if(xhr.status === 400) {
             const errorJson = xhr.response
-            console.log(errorJson)
+            console.log(errorJson) 
             const contentError = errorJson.content
             let contentErrorMsg;
-            if(contentError) {
-              contentErrorMsg = contentError[0]
-
-            }else {
-              alert("An error occured. Please Try Again")
+            if(contentError){
+                contentErrorMsg = contentError[0]
+            } else{
+                alert("An Error occured. Please Try Again.")
             }
-            
-        } else if (xhr.status === 500){
-            alert("There is Server Error, Please try again.")
+            console.log( contentErrorMsg)
+
+        } else if(xhr.status === 500){
+            alert("An Server Error Occured. Please Try Again") 
         }
-        console.log(contentErrorMsg)
     }
     xhr.onerror = function(){
       alert("An error Occurred. Please Try Again Later")
     }
-      xhr.send(myFormData)
+    xhr.send(myFormData)
 }
  
 
