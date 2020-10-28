@@ -26,7 +26,7 @@ SECRET_KEY = '_6*t9lk2nx13hed18dpd2mv*oo^r_%k1#)e+ud*57f-buypi4u'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.cfe.sh']
-
+LOGIN_URL = "/login"
 
 # Application definition
 
