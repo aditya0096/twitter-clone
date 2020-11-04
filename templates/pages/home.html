@@ -76,7 +76,14 @@ Twitter
             } else{
                 alert("An Error occured. Please Try Again.")
             }
-        } else if(xhr.status === 500){
+        } else if(xhr.status === 401){
+            alert("You Must Login!!!") 
+            window.location.href = "/login"
+        }else if(xhr.status === 403){
+            alert("You Must Login!!!") 
+            window.location.href = "/login"
+        }
+        else if(xhr.status === 500){
             alert("An Server Error Occured. Please Try Again") 
         }
     }
@@ -103,7 +110,7 @@ Twitter
   xhr.open(method, url)
   xhr.onload = function(){
     const serverResponse = xhr.response
-    var listedItems = serverResponse.response // array 
+    var listedItems = serverResponse// array 
     var finalTweetStr = ""
     var i;
     for(i=0;i<listedItems.length; i++){

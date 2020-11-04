@@ -1,10 +1,11 @@
 1. Tweets
-    -> creating
-        ->text
-        ->image ->media storage
-    ->delete
-    ->retweeting
-    ->liking
+    -> user permission
+        -> creating
+            ->text
+            - >image ->media storage
+        ->delete
+        ->retweeting
+        ->liking
 
 2. users
 
