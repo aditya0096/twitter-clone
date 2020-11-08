@@ -4,7 +4,9 @@
             ->text
             - >image ->media storage
         ->delete
-        ->retweeting
+        ->retweeting // after making this we need to add some more fields to it
+            -> REead only serializer
+            -> Create only serializer
         ->liking
 
 2. users
